@@ -21,10 +21,8 @@ class CreatePedidoEmailTable extends Migration
             $table->string('cliente');
             $table->string('status');
             $table->unsignedBigInteger('usuario_id');
-            $table->unsignedBigInteger('modelo_email_id');
             $table->timestamps();
             $table->foreign('usuario_id')->references('id')->on('usuarios');
-            $table->foreign('modelo_email_id')->references('id');
         });
     }
 

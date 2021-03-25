@@ -22,10 +22,8 @@ class CreatePedidoNotificacaoTable extends Migration
             $table->string('cliente');
             $table->string('status');
             $table->unsignedBigInteger('usuario_id');
-            $table->unsignedBigInteger('modelo_notificacao_id');
             $table->timestamps();
             $table->foreign('usuario_id')->references('id')->on('usuarios');
-            $table->foreign('modelo_notificacao_id')->references('id');
         });
     }
 

@@ -12,3 +12,4 @@ AH00558: apache2: Could not reliably determine the server's fully qualified doma
 AH00558: apache2: Could not reliably determine the server's fully qualified domain name, using 192.168.16.2. Set the 'ServerName' directive globally to suppress this message
 [Thu Mar 25 10:15:04.580537 2021] [mpm_prefork:notice] [pid 1] AH00163: Apache/2.4.38 (Debian) PHP/7.4.16 configured -- resuming normal operations
 [Thu Mar 25 10:15:04.581388 2021] [core:notice] [pid 1] AH00094: Command line: 'apache2 -D FOREGROUND'
+[Thu Mar 25 16:03:39.379432 2021] [autoindex:error] [pid 17] [client 192.168.16.1:36916] AH01276: Cannot serve directory /var/www/html/: No matching DirectoryIndex (index.php,index.html) found, and server-generated directory index forbidden by Options directive

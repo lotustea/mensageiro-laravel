@@ -2,7 +2,7 @@
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\Api\UsuarioController;
+use App\Http\Controllers\Api\UserController;
 
 /*
 |--------------------------------------------------------------------------
@@ -19,4 +19,4 @@ use App\Http\Controllers\Api\UsuarioController;
     return $request->user();
 });*/
 
-Route::get('usuarios', [UsuarioController::class, 'index']);
+Route::get('usuarios', [UserController::class, 'index']);

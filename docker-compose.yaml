@@ -7,6 +7,7 @@ services:
       - "8080:80"
     volumes:
       - ./:/usr/share/nginx
+      - .docker/nginx/conf.d:/etc/nginx/conf.d
     networks:
       - app-network
 
@@ -27,12 +28,10 @@ services:
     restart: always
     ports:
       - 8081:80
-    volumes:
-      - .docker/phpmyadmindata:/var
     environment:
       - PMA_ARBITRARY=1
       - PMA_PORT=3306
-      - PM_HOST=127.0.0.1
+      - PM_HOST=mysql-app
     networks:
       - app-network
 

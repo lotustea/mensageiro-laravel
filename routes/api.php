@@ -1,5 +1,6 @@
 <?php
 
+use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Api\UserController;
@@ -15,8 +16,16 @@ use App\Http\Controllers\Api\UserController;
 |
 */
 
-/*Route::middleware('auth:api')->get('/user', function (Request $request) {
+Route::middleware('client')->get('/user', function (Request $request) {
     return $request->user();
-});*/
+});
 
-Route::apiResource('usuarios', 'App\Http\Controllers\Api\UserController');
+//Route::apiResource('users', 'App\Http\Controllers\Api\UserController');
+
+Route::middleware('auth:api')->get('users', function (Request $request){
+    return User::where('id', auth()->user()->id);
+});
+
+Route::get('envio-email', function(){
+     \Illuminate\Support\Facades\Mail::send(new \App\Mail\MailService());
+});

@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateTipoUsuarioTable extends Migration
+class CreateTipoUsuariosTable extends Migration
 {
     /**
      * Run the migrations.
@@ -15,7 +15,7 @@ class CreateTipoUsuarioTable extends Migration
     {
         Schema::create('tipo_usuario', function (Blueprint $table) {
             $table->id();
-            $table->string('nome');
+            $table->string('tipo');
             $table->timestamps();
         });
     }

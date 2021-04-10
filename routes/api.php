@@ -26,6 +26,11 @@ Route::middleware('auth:api')->get('users', function (Request $request){
     return User::where('id', auth()->user()->id);
 });
 
-Route::get('envio-email', function(){
-     \Illuminate\Support\Facades\Mail::send(new \App\Mail\MailService());
+Route::get('envio-email-job', function(){
+    \App\Jobs\MailJob::dispatch()->delay(now()->addSeconds('15'));
+});
+
+Route::get('envio-email-notification', function(){
+    \Illuminate\Support\Facades\Notification::route('mail', 'chillout1manager@gmail.com')
+        ->notify(new \App\Notifications\MailNotification());
 });
